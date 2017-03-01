@@ -1,4 +1,5 @@
 using Nancy;
+using System.Collections.Generic;
 
 namespace TodoService
 {
@@ -6,7 +7,7 @@ namespace TodoService
     {
         public TaskModule()
         {
-            Get("/", _ => "Hello World!");
+            Get("/", _ => new List<TodoTask>() { new TodoTask { Id = 1, Description = "Mow the lawn" }});
         }
     }
 }
